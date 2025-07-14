@@ -7,6 +7,7 @@ This is a modern portfolio website built with React, TypeScript, and Express.js.
 ## User Preferences
 
 Preferred communication style: Simple, everyday language.
+Project preference: Frontend-only structure (no backend complexity)
 
 ## System Architecture
 
