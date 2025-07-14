@@ -1,125 +1,112 @@
-# Portfolio Website - Replit Project Guide
+# replit.md
 
 ## Overview
 
-This is a modern portfolio website built with React, TypeScript, and Express.js. It features a single-page application (SPA) with a dark-themed design showcasing professional skills, projects, and contact functionality. The application uses a full-stack architecture with file-based PDF serving and contact form submission capabilities.
+This is a modern portfolio website built with React and TypeScript, featuring a clean, dark-themed design. The application serves as a personal portfolio for Nikhil Nath P, a Frontend Developer with 2+ years of experience. The site includes a hero section with personal information and a contact form, all styled with a modern dark aesthetic using Tailwind CSS.
 
 ## User Preferences
 
 Preferred communication style: Simple, everyday language.
-Project preference: Frontend-only structure (no backend complexity)
 
 ## System Architecture
 
+This is a client-side React application with a simple static structure. The application uses modern React patterns with TypeScript for type safety and Tailwind CSS for styling. The architecture is straightforward and focuses on presentation rather than complex data management.
+
 ### Frontend Architecture
 - **Framework**: React 18 with TypeScript
-- **UI Framework**: Radix UI components with shadcn/ui styling system
 - **Styling**: Tailwind CSS with custom CSS variables for theming
-- **State Management**: React Query (@tanstack/react-query) for server state
-- **Routing**: Wouter for lightweight client-side routing
-- **Build Tool**: Vite for development and production builds
+- **Build Tool**: Vite for fast development and building
+- **Component Structure**: Functional components with hooks
+- **State Management**: Local React state (useState) for form handling
 
-### Backend Architecture
-- **Runtime**: Node.js with Express.js framework
-- **Language**: TypeScript with ES modules
-- **Database**: PostgreSQL with Drizzle ORM
-- **Database Provider**: Neon Database (serverless)
-- **Session Management**: In-memory storage with potential for database persistence
+### File Structure
+```
+src/
+├── components/
+│   ├── hero-frontend.tsx    # Hero section with personal info and download buttons
+│   └── contact-frontend.tsx # Contact form and information
+├── App.tsx                  # Main application component
+├── main.tsx                 # Application entry point
+└── index.css               # Global styles and CSS variables
+```
 
-### Key Components
+## Key Components
 
-1. **Portfolio Components**
-   - Navigation with smooth scrolling
-   - Hero section with downloadable CV/Cover Letter
-   - About section with achievements showcase
-   - Skills section with animated progress bars
-   - Projects section with live demos and GitHub links
-   - Services section outlining capabilities
-   - Contact form with validation and submission
-   - Footer with social links
+### Hero Section (`hero-frontend.tsx`)
+- Displays personal information and professional title
+- Includes download buttons for CV and cover letter
+- Features social media links
+- Uses gradient backgrounds and animations
 
-2. **UI System**
-   - Complete shadcn/ui component library
-   - Custom hooks for intersection observer and smooth scrolling
-   - Responsive design with mobile-first approach
-   - Toast notifications for user feedback
-   - Form validation with error handling
+### Contact Section (`contact-frontend.tsx`)
+- Contact form with validation
+- Displays contact information with icons
+- Form submission simulation (frontend-only)
+- Success/error state management
 
-3. **Backend Services**
-   - Contact form API endpoint with validation
-   - File download endpoints for CV and cover letter
-   - Contact messages retrieval (admin functionality)
-   - Request logging and error handling middleware
+### Styling System
+- Custom CSS variables for consistent theming
+- Dark color scheme with cyan/blue accents
+- Responsive design using Tailwind CSS
+- Custom gradient backgrounds
 
 ## Data Flow
 
-### Contact Form Flow
-1. User fills out contact form on frontend
-2. Form data validated using Zod schema
-3. POST request sent to `/api/contact` endpoint
-4. Server validates data and stores in database
-5. Success/error response sent back to client
-6. Toast notification displayed to user
-
-### File Download Flow
-1. User clicks download button (CV or Cover Letter)
-2. Request sent to respective download endpoint
-3. Server locates file in public directory
-4. File streamed to client with proper headers
-5. Browser initiates download with custom filename
-
-### Database Schema
-- **Users Table**: Basic user authentication (currently unused)
-- **Contact Messages Table**: Stores form submissions with timestamps
-- **Schema Validation**: Drizzle-Zod integration for type-safe operations
+The application follows a simple unidirectional data flow:
+1. User interactions trigger state updates via useState hooks
+2. Form data is managed locally in component state
+3. Form submission is simulated with setTimeout (no backend integration)
+4. Success/error states are managed locally and reset automatically
 
 ## External Dependencies
 
-### Frontend Dependencies
-- **UI Components**: Radix UI primitives for accessible components
-- **Icons**: Lucide React icons and React Icons
-- **Animations**: CSS transitions and transforms
-- **Date Handling**: date-fns for timestamp formatting
-- **Validation**: Zod for runtime type checking
-- **HTTP Client**: Fetch API with custom wrapper
+### UI Libraries
+- **Radix UI**: Comprehensive set of accessible UI components
+- **Lucide React**: Icon library for modern icons
+- **React Icons**: Additional icon sets (Font Awesome icons)
 
-### Backend Dependencies
-- **Database**: @neondatabase/serverless for PostgreSQL connection
-- **ORM**: Drizzle ORM with PostgreSQL dialect
-- **Session Store**: connect-pg-simple for PostgreSQL sessions
-- **Validation**: Zod for request validation
-- **File Handling**: Node.js built-in modules
+### Styling
+- **Tailwind CSS**: Utility-first CSS framework
+- **class-variance-authority**: For component variants
+- **clsx**: For conditional class names
 
-### Development Dependencies
-- **Build**: Vite with React plugin
-- **Type Checking**: TypeScript with strict mode
-- **CSS Processing**: PostCSS with Autoprefixer
-- **Development Tools**: Replit-specific plugins for debugging
+### Development Tools
+- **Vite**: Build tool and development server
+- **TypeScript**: Type checking and enhanced developer experience
+- **ESLint/TSC**: Code quality and type checking
+
+### Backend Dependencies (Currently Unused)
+The project includes backend-related dependencies that are not currently utilized:
+- Express.js framework
+- Drizzle ORM
+- Neon Database serverless
+- Authentication libraries
 
 ## Deployment Strategy
 
 ### Build Process
-1. **Frontend Build**: Vite compiles React app to static files
-2. **Backend Build**: esbuild bundles server code for production
-3. **Database Migration**: Drizzle pushes schema changes to database
-4. **Asset Handling**: Static files served from build directory
+- **Development**: `npm run dev` - Uses Vite dev server with hot reloading
+- **Build**: `npm run build` - Vite builds the client-side application
+- **Production**: Static files served from `dist/public`
 
 ### Environment Configuration
-- **Development**: Uses Vite dev server with HMR
-- **Production**: Express serves static files and API routes
-- **Database**: PostgreSQL connection via environment variable
-- **File Storage**: Local file system for PDF storage
+- Development environment includes Replit-specific plugins
+- Production build excludes development-only features
+- Environment variables control build behavior
 
-### Production Considerations
-- Server-side rendering not implemented (SPA architecture)
-- Static file serving through Express in production
-- Database migrations handled through Drizzle CLI
-- Environment-specific configurations for different deployment stages
-- Error handling and logging for production debugging
+### File Structure for Deployment
+```
+dist/
+└── public/          # Built client-side application
+    ├── index.html
+    ├── assets/       # Bundled CSS and JS
+    └── cv.pdf        # Static assets (CV, cover letter)
+```
 
-### Key Features
-- **Responsive Design**: Mobile-first approach with breakpoint-based layouts
-- **Performance**: Code splitting and lazy loading where applicable
-- **Accessibility**: ARIA labels and keyboard navigation support
-- **SEO**: Meta tags and semantic HTML structure
-- **User Experience**: Smooth scrolling, transitions, and feedback mechanisms
+## Notes
+
+- The application is currently frontend-only with simulated backend functionality
+- Contact form submissions are handled locally without server integration
+- CV and cover letter downloads expect PDF files in the public directory
+- The project structure suggests preparation for full-stack development but currently serves as a static portfolio site
+- Backend dependencies are included but not actively used in the current implementation
