@@ -1,0 +1,53 @@
+npm i
+npm warn deprecated @esbuild-kit/esm-loader@2.6.5: Merged into tsx: https://tsx.is
+npm warn deprecated @esbuild-kit/core-utils@3.3.2: Merged into tsx: https://tsx.is
+npm warn cleanup Failed to remove some directories [
+npm warn cleanup   [
+npm warn cleanup     'C:\\Users\\LENOVO\\Downloads\\DevPortfolioHub\\DevPortfolioHub\\node_modules\\fast-glob',
+npm warn cleanup     [Error: EPERM: operation not permitted, rmdir 'C:\Users\LENOVO\Downloads\DevPortfolioHub\DevPortfolioHub\node_modules\fast-glob\out'] {
+npm warn cleanup       errno: -4048,
+npm warn cleanup       code: 'EPERM',
+npm warn cleanup       syscall: 'rmdir',
+npm warn cleanup       path: 'C:\\Users\\LENOVO\\Downloads\\DevPortfolioHub\\DevPortfolioHub\\node_modules\\fast-glob\\out'
+npm warn cleanup     }
+npm warn cleanup   ],
+npm warn cleanup   [
+npm warn cleanup     'C:\\Users\\LENOVO\\Downloads\\DevPortfolioHub\\DevPortfolioHub\\node_modules\\@tanstack\\react-query',
+npm warn cleanup     [Error: EPERM: operation not permitted, rmdir 'C:\Users\LENOVO\Downloads\DevPortfolioHub\DevPortfolioHub\node_modules\@tanstack\react-query\build\codemods\src\utils'] {
+npm warn cleanup       errno: -4048,
+npm warn cleanup       code: 'EPERM',
+npm warn cleanup       syscall: 'rmdir',
+npm warn cleanup       path: 'C:\\Users\\LENOVO\\Downloads\\DevPortfolioHub\\DevPortfolioHub\\node_modules\\@tanstack\\react-query\\build\\codemods\\src\\utils'
+npm warn cleanup     }
+npm warn cleanup   ],
+npm warn cleanup   [
+npm warn cleanup     '\\\\?\\C:\\Users\\LENOVO\\Downloads\\DevPortfolioHub\\DevPortfolioHub\\node_modules\\resolve',
+npm warn cleanup     [Error: EPERM: operation not permitted, rmdir 'C:\Users\LENOVO\Downloads\DevPortfolioHub\DevPortfolioHub\node_modules\resolve\test\resolver'] {
+npm warn cleanup       errno: -4048,
+npm warn cleanup       code: 'EPERM',
+npm warn cleanup       syscall: 'rmdir',
+npm warn cleanup       path: 'C:\\Users\\LENOVO\\Downloads\\DevPortfolioHub\\DevPortfolioHub\\node_modules\\resolve\\test\\resolver'
+npm warn cleanup     }
+npm warn cleanup   ],
+npm warn cleanup   [
+npm warn cleanup     '\\\\?\\C:\\Users\\LENOVO\\Downloads\\DevPortfolioHub\\DevPortfolioHub\\node_modules\\sucrase',
+npm warn cleanup     [Error: EPERM: operation not permitted, rmdir 'C:\Users\LENOVO\Downloads\DevPortfolioHub\DevPortfolioHub\node_modules\sucrase'] {
+npm warn cleanup       errno: -4048,
+npm warn cleanup       code: 'EPERM',
+npm warn cleanup       syscall: 'rmdir',
+npm warn cleanup       path: 'C:\\Users\\LENOVO\\Downloads\\DevPortfolioHub\\DevPortfolioHub\\node_modules\\sucrase'
+npm warn cleanup     }
+npm warn cleanup   ]
+npm warn cleanup ]
+npm error code ECONNRESET
+npm error syscall read
+npm error errno -4077
+npm error network read ECONNRESET
+npm error network This is a problem related to network connectivity.
+npm error network In most cases you are behind a proxy or have bad network settings.
+npm error network
+npm error network If you are behind a proxy, please make sure that the
+npm error network 'proxy' config is set properly.  See: 'npm help config'
+npm error A complete log of this run can be found in: C:\Users\LENOVO\AppData\Local\npm-cache\_logs\2025-07-14T07_08_31_351Z-debug-0.log
+
+C:\Users\LENOVO\Downloads\DevPortfolioHub\DevPortfolioHub>
