@@ -1,6 +1,5 @@
 import { Download, FileText, Mail } from "lucide-react";
 import { FaLinkedin, FaGithub } from "react-icons/fa";
-import { Button } from "@/components/ui/button";
 
 export function Hero() {
   const handleDownloadCV = () => {
@@ -40,19 +39,18 @@ export function Hero() {
             </p>
             
             <div className="flex flex-wrap gap-4 mb-8">
-              <Button 
+              <button 
                 onClick={handleDownloadCV}
-                className="bg-[var(--accent-cyan)] hover:bg-[var(--accent-blue)] text-[var(--dark-primary)] px-6 py-3 font-semibold hover-lift"
+                className="bg-cyan-500 hover:bg-blue-500 text-black px-6 py-3 font-semibold rounded-lg transition-colors duration-300 flex items-center"
               >
                 Download CV <Download className="ml-2 h-4 w-4" />
-              </Button>
-              <Button 
+              </button>
+              <button 
                 onClick={handleDownloadCL}
-                variant="outline"
-                className="border-2 border-[var(--accent-cyan)] text-[var(--accent-cyan)] hover:bg-[var(--accent-cyan)] hover:text-[var(--dark-primary)] px-6 py-3 font-semibold hover-lift"
+                className="border-2 border-cyan-500 text-cyan-500 hover:bg-cyan-500 hover:text-black px-6 py-3 font-semibold rounded-lg transition-colors duration-300 flex items-center"
               >
                 Download CL <FileText className="ml-2 h-4 w-4" />
-              </Button>
+              </button>
             </div>
             
             <div className="flex space-x-6">

@@ -1,14 +1,9 @@
 import { useState } from "react";
 import { Mail, Phone, MapPin, Send, CheckCircle } from "lucide-react";
 import { FaLinkedin, FaGithub } from "react-icons/fa";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
-import { Label } from "@/components/ui/label";
-import { useIntersectionObserver } from "@/hooks/use-intersection-observer";
 
 export function Contact() {
-  const { ref, isIntersecting } = useIntersectionObserver();
+  const [isIntersecting, setIsIntersecting] = useState(true);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [formData, setFormData] = useState({
@@ -74,7 +69,7 @@ export function Contact() {
           </p>
         </div>
         
-        <div ref={ref} className={`grid md:grid-cols-2 gap-12 transition-all duration-1000 ${isIntersecting ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+        <div className={`grid md:grid-cols-2 gap-12 transition-all duration-1000 ${isIntersecting ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
           <div className="glass-card p-8 rounded-xl">
             <h3 className="text-2xl font-semibold mb-6 text-[var(--accent-cyan)]">Contact Information</h3>
             
@@ -133,69 +128,69 @@ export function Contact() {
             ) : (
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div>
-                  <Label htmlFor="name" className="text-sm font-medium text-white">Full Name</Label>
-                  <Input
+                  <label htmlFor="name" className="block text-sm font-medium text-white mb-2">Full Name</label>
+                  <input
                     id="name"
                     name="name"
                     type="text"
                     value={formData.name}
                     onChange={handleInputChange}
-                    className="mt-2 bg-[var(--dark-tertiary)] border-gray-600 text-white focus:border-[var(--accent-cyan)] transition-colors"
+                    className="w-full px-4 py-2 bg-gray-800 border border-gray-600 text-white focus:border-cyan-500 rounded-lg transition-colors"
                     placeholder="Your Name"
                     required
                   />
                 </div>
                 
                 <div>
-                  <Label htmlFor="email" className="text-sm font-medium text-white">Email Address</Label>
-                  <Input
+                  <label htmlFor="email" className="block text-sm font-medium text-white mb-2">Email Address</label>
+                  <input
                     id="email"
                     name="email"
                     type="email"
                     value={formData.email}
                     onChange={handleInputChange}
-                    className="mt-2 bg-[var(--dark-tertiary)] border-gray-600 text-white focus:border-[var(--accent-cyan)] transition-colors"
+                    className="w-full px-4 py-2 bg-gray-800 border border-gray-600 text-white focus:border-cyan-500 rounded-lg transition-colors"
                     placeholder="your@email.com"
                     required
                   />
                 </div>
                 
                 <div>
-                  <Label htmlFor="subject" className="text-sm font-medium text-white">Subject</Label>
-                  <Input
+                  <label htmlFor="subject" className="block text-sm font-medium text-white mb-2">Subject</label>
+                  <input
                     id="subject"
                     name="subject"
                     type="text"
                     value={formData.subject}
                     onChange={handleInputChange}
-                    className="mt-2 bg-[var(--dark-tertiary)] border-gray-600 text-white focus:border-[var(--accent-cyan)] transition-colors"
+                    className="w-full px-4 py-2 bg-gray-800 border border-gray-600 text-white focus:border-cyan-500 rounded-lg transition-colors"
                     placeholder="Project Discussion"
                     required
                   />
                 </div>
                 
                 <div>
-                  <Label htmlFor="message" className="text-sm font-medium text-white">Message</Label>
-                  <Textarea
+                  <label htmlFor="message" className="block text-sm font-medium text-white mb-2">Message</label>
+                  <textarea
                     id="message"
                     name="message"
                     value={formData.message}
                     onChange={handleInputChange}
                     rows={4}
-                    className="mt-2 bg-[var(--dark-tertiary)] border-gray-600 text-white focus:border-[var(--accent-cyan)] transition-colors resize-none"
+                    className="w-full px-4 py-2 bg-gray-800 border border-gray-600 text-white focus:border-cyan-500 rounded-lg transition-colors resize-none"
                     placeholder="Tell me about your project..."
                     required
                   />
                 </div>
                 
-                <Button 
+                <button 
                   type="submit" 
                   disabled={isSubmitting}
-                  className="w-full bg-[var(--accent-cyan)] hover:bg-[var(--accent-blue)] text-[var(--dark-primary)] font-semibold py-3 transition-colors duration-300"
+                  className="w-full bg-cyan-500 hover:bg-blue-500 text-black font-semibold py-3 rounded-lg transition-colors duration-300 flex items-center justify-center"
                 >
                   {isSubmitting ? "Sending..." : "Send Message"}
                   <Send className="ml-2 h-4 w-4" />
-                </Button>
+                </button>
               </form>
             )}
           </div>
