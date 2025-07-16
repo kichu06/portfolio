@@ -1,7 +1,7 @@
 import {
   SiReact, SiVuedotjs, SiNextdotjs, SiJavascript, SiTypescript,
   SiHtml5, SiCss3, SiTailwindcss, SiGit, SiVite, SiOpenai,
-  SiGithub, SiSass, SiMysql
+  SiGithub, SiSass, SiMysql,SiFigma, SiJira
 } from "react-icons/si";
 import { FaRobot, FaComments } from "react-icons/fa";
 
@@ -31,6 +31,8 @@ const aiSkills = [
 // Group 3: Other Tools & Practices
 const otherSkills = [
   { name: "SQL", icon: SiMysql },
+  { name: "JIRA", icon: SiJira   },
+  { name: "Figma", icon: SiFigma  },
   { name: "VTEX CMS", icon: null },
   { name: "Flash CMS", icon: null },
   { name: "Web Security", icon: null },
@@ -49,7 +51,7 @@ const getInitials = (name: string) =>
 
 export function SkillsSection() {
   return (
-    <section id="skills" className="py-5 text-center">
+    <section id="skills" className="py-5 px-6 text-center">
       <h2 className="text-4xl font-bold mb-10 text-gradient">Skills</h2>
 
       {/* Frontend Skills */}

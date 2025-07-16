@@ -33,5 +33,6 @@ export default defineConfig(async () => {
         deny: ["**/.*"],
       },
     },
+    base:"/portfolio/"
   };
 });

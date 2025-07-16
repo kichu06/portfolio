@@ -5,8 +5,8 @@ export function Hero() {
   const handleDownloadCV = () => {
     // Create a link element and trigger download
     const link = document.createElement('a');
-    link.href = '/NIKHIL_NATH P_Final CV.pdf'; // Place your CV in the public folder
-    link.download = 'NIKHIL_NATH P_Final CV.pdf';
+    link.href = '/portfolio/NIKHIL_NATH_P_Final_CV.pdf'; 
+    link.download = 'NIKHIL_NATH_P_Final_CV.pdf';
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
@@ -15,8 +15,8 @@ export function Hero() {
   const handleDownloadCL = () => {
     // Create a link element and trigger download
     const link = document.createElement('a');
-    link.href = '/NIKHIL_NATH P_CL.pdf'; // Place your cover letter in the public folder
-    link.download = 'NIKHIL_NATH P_CL.pdf';
+    link.href = '/portfolio/NIKHIL_NATH_P_CL.pdf'; 
+    link.download = 'NIKHIL_NATH_P_CL.pdf';
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
