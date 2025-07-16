@@ -5,8 +5,8 @@ export function Hero() {
   const handleDownloadCV = () => {
     // Create a link element and trigger download
     const link = document.createElement('a');
-    link.href = '/cv.pdf'; // Place your CV in the public folder
-    link.download = 'Nikhil_Nath_P_CV.pdf';
+    link.href = '/NIKHIL_NATH P_Final CV.pdf'; // Place your CV in the public folder
+    link.download = 'NIKHIL_NATH P_Final CV.pdf';
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
@@ -15,8 +15,8 @@ export function Hero() {
   const handleDownloadCL = () => {
     // Create a link element and trigger download
     const link = document.createElement('a');
-    link.href = '/cover-letter.pdf'; // Place your cover letter in the public folder
-    link.download = 'Nikhil_Nath_P_Cover_Letter.pdf';
+    link.href = '/NIKHIL_NATH P_CL.pdf'; // Place your cover letter in the public folder
+    link.download = 'NIKHIL_NATH P_CL.pdf';
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
@@ -34,51 +34,51 @@ export function Hero() {
               Frontend Developer
             </h2>
             <p className="text-lg mb-8 text-gray-400 leading-relaxed">
-              Experienced professional with 2+ years specializing in building scalable, responsive web applications 
-              and SPAs using JavaScript frameworks like Vue.js and React.js. Currently working at Motorola Mobility.
+              Experienced front-end developer with 2+ years of expertise in building responsive web applications and SPAs using Vue.js, React.js, and Next.js. Proficient in CMS integration with VTEX and Flash, performance tuning, and accessibility compliance. Skilled in translating Figma designs into pixel-perfect UI, resolving complex UI bugs, and enhancing user experiences across global e-commerce platforms. Currently working at Motorola Mobility.
             </p>
-            
+
+
             <div className="flex flex-wrap gap-4 mb-8">
-              <button 
+              <button
                 onClick={handleDownloadCV}
                 className="bg-cyan-500 hover:bg-blue-500 text-black px-6 py-3 font-semibold rounded-lg transition-colors duration-300 flex items-center"
               >
                 Download CV <Download className="ml-2 h-4 w-4" />
               </button>
-              <button 
+              <button
                 onClick={handleDownloadCL}
                 className="border-2 border-cyan-500 text-cyan-500 hover:bg-cyan-500 hover:text-black px-6 py-3 font-semibold rounded-lg transition-colors duration-300 flex items-center"
               >
                 Download CL <FileText className="ml-2 h-4 w-4" />
               </button>
             </div>
-            
+
             <div className="flex space-x-6">
-              <a 
-                href="https://www.linkedin.com/in/nikhil-nath-222113221/" 
-                target="_blank" 
+              <a
+                href="https://www.linkedin.com/in/nikhil-nath-222113221/"
+                target="_blank"
                 rel="noopener noreferrer"
                 className="text-2xl text-white hover:text-[var(--accent-cyan)] transition-colors duration-300"
               >
                 <FaLinkedin />
               </a>
-              <a 
-                href="https://github.com/kichu06" 
-                target="_blank" 
+              <a
+                href="https://github.com/kichu06"
+                target="_blank"
                 rel="noopener noreferrer"
                 className="text-2xl text-white hover:text-[var(--accent-cyan)] transition-colors duration-300"
               >
                 <FaGithub />
               </a>
-              <a 
-                href="mailto:nikhilnath6677@gmail.com"
+              <a
+                href="mailto:nnkichu0609@gmail.com"
                 className="text-2xl text-white hover:text-[var(--accent-cyan)] transition-colors duration-300"
               >
                 <Mail />
               </a>
             </div>
           </div>
-          
+
           <div className="relative animate-float">
             <div className="w-80 h-80 mx-auto relative">
               <div className="absolute inset-0 rounded-full bg-gradient-to-r from-[var(--accent-cyan)] to-[var(--accent-blue)] animate-glow"></div>
