@@ -1,3 +1,5 @@
+import React from 'react'
+import { motion } from 'framer-motion';
 const experiences = [
   {
     company: "Motorola Mobility (Lenovo)",
@@ -10,7 +12,7 @@ const experiences = [
       "Collaborated with cross-geo design teams (US & India) to implement responsive Figma designs.",
       "Automated product entry using a Python Scrapy bot, reducing manual work by 40%.",
       "Resolved 100+ cross-browser and UI-specific bugs during QA and UAT cycles.",
-        "Integrated widgets using script tags on specific meta targets for headless CMS.",
+      "Integrated widgets using script tags on specific meta targets for headless CMS.",
       "Integrated REST APIs and optimized frontend load times using performance audits."
     ]
   },
@@ -36,7 +38,15 @@ export function ExperienceSection() {
         <h2 className="text-4xl font-bold mb-10 text-gradient text-center">Experience</h2>
         <div className="space-y-8">
           {experiences.map((exp, index) => (
-            <div key={index} className="glass-card p-6 rounded-xl">
+
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: index * 0.2 }}
+              viewport={{ once: true, amount: 0.3 }}
+              className="glass-card p-6 rounded-xl "
+            >
               <h3 className="text-2xl font-semibold mb-1">{exp.role}</h3>
               <p className="text-[var(--accent-cyan)] mb-1">{exp.company}</p>
               <p className="text-sm text-gray-400 mb-3">{exp.period}</p>
@@ -45,7 +55,7 @@ export function ExperienceSection() {
                   <li key={j}>{point}</li>
                 ))}
               </ul>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>

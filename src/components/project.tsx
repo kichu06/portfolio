@@ -1,8 +1,6 @@
-// This file contains responsive UI sections: Projects, Skills, Experience, Education
-// All data is dynamic via arrays for easy expansion or removal
-
-// ProjectSection.tsx
+import React from "react";
 import { FaGithub, FaExternalLinkAlt } from "react-icons/fa";
+import {motion} from "framer-motion";
 
 const projects = [
   {
@@ -55,8 +53,12 @@ export function ProjectSection() {
         <h2 className="text-4xl font-bold py-2 mb-10 text-gradient">Projects</h2>
         <div className="grid md:grid-cols-2 gap-10">
           {projects.map((project, i) => (
-            <div
+            <motion.div
               key={i}
+               initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: i * 0.2 }}
+              viewport={{ once: true, amount: 0.3 }}
               className="glass-card p-6 rounded-xl shadow-md text-left flex flex-col justify-between"
             >
               <div>
@@ -91,7 +93,7 @@ export function ProjectSection() {
                   GitHub <FaGithub className="ml-2" size={14} />
                 </a>
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>

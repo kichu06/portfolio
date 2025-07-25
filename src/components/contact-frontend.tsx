@@ -2,9 +2,9 @@ import { useState } from "react";
 import { Mail, Phone, MapPin, Send, CheckCircle, AlertCircle } from "lucide-react";
 import { FaLinkedin, FaGithub } from "react-icons/fa";
 import emailjs from "@emailjs/browser";
+import { motion } from "framer-motion";
 
 export function Contact() {
-  const [isIntersecting, setIsIntersecting] = useState(true);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [hasError, setHasError] = useState(false);
@@ -40,12 +40,11 @@ export function Contact() {
             timeStyle: "short",
           }),
         },
-        "bZFwNY6mbQR81UHYE"
+        "zQVfshHeHr-fouigs"
       );
 
       setIsSubmitted(true);
       setFormData({ name: "", email: "", subject: "", message: "" });
-
       setTimeout(() => setIsSubmitted(false), 3000);
     } catch (error) {
       console.error("Failed to send email:", error);
@@ -98,7 +97,13 @@ export function Contact() {
 
   return (
     <section id="contact" className="pt-5 pb-10">
-      <div className="container mx-auto px-6">
+      <motion.div 
+       className="container mx-auto px-6"
+        initial={{ opacity: 0, scale: 0.95 }}
+        whileInView={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 0.6 }}
+        viewport={{ once: true, amount: 0.3 }}
+      >
         <div className="text-center mb-8">
           <h2 className="text-4xl font-bold mb-4 text-gradient">Get In Touch</h2>
           <p className="text-gray-400 max-w-2xl mx-auto">
@@ -106,7 +111,7 @@ export function Contact() {
           </p>
         </div>
 
-        <div className={`grid md:grid-cols-2 gap-12 transition-all duration-1000 ${isIntersecting ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+        <div className={`grid md:grid-cols-2 gap-12 transition-all duration-1000 opacity-100 translate-y-0'`}>
           <div className="glass-card p-8 rounded-xl">
             <h3 className="text-2xl font-semibold mb-6 text-[var(--accent-cyan)]">Contact Information</h3>
 
@@ -183,7 +188,7 @@ export function Contact() {
             )}
           </div>
         </div>
-      </div>
+      </motion.div>
     </section>
   );
 }
