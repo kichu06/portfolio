@@ -5,7 +5,7 @@ const experiences = [
     period: "Jul 2024 – Present",
     bullets: [
       "Migrated multiple VTEX portals to in-house Flash CMS using Vue.js and SASS.",
-      "Developed 15+ reusable UI components and integrated 20+ React modules.",
+      "Developed reusable UI components and integrated React modules.",
       "Improved web accessibility from 70% to 92% using WCAG-compliant practices.",
       "Collaborated with cross-geo design teams (US & India) to implement responsive Figma designs.",
       "Automated product entry using a Python Scrapy bot, reducing manual work by 40%.",
@@ -53,4 +53,3 @@ export function ExperienceSection() {
   );
 }
 
-// EducationSection.tsx
