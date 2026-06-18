@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from "react";
-import { Download, FileText, Mail } from "lucide-react";
+import { Download, FileText, Mail ,ExternalLink} from "lucide-react";
 import { FaLinkedin, FaGithub } from "react-icons/fa";
-import { SiReact, SiVuedotjs, SiNextdotjs } from "react-icons/si";
+import { SiReact, SiVuedotjs, SiNextdotjs, SiPython } from "react-icons/si";
 import { Typewriter } from 'react-simple-typewriter';
 import { motion } from 'framer-motion';
+
 
 
 export function Hero() {
@@ -11,6 +12,7 @@ export function Hero() {
     { icon: SiReact, color: "#61DAFB" },      // React blue
     { icon: SiVuedotjs, color: "#42B883" },   // Vue green
     { icon: SiNextdotjs, color: "#FFFFFF" },  // Next.js - white (better for dark backgrounds)
+    { icon: SiPython, color: "#3776AB" },
   ];
   const [showCursor, setShowCursor] = useState(true);
   const [index, setIndex] = useState(0);
@@ -25,8 +27,8 @@ export function Hero() {
   const handleDownloadCV = () => {
     // Create a link element and trigger download
     const link = document.createElement('a');
-    link.href = '/portfolio/NIKHIL_NATH_P_Final_CV.pdf';
-    link.download = 'NIKHIL_NATH_P_Final_CV.pdf';
+    link.href = '/portfolio/NIKHIL_NATH_P_2026.pdf';
+    link.download = 'NIKHIL_NATH_P_2026.pdf';
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
@@ -35,8 +37,8 @@ export function Hero() {
   const handleDownloadCL = () => {
     // Create a link element and trigger download
     const link = document.createElement('a');
-    link.href = '/portfolio/NIKHIL_NATH_P_CL.pdf';
-    link.download = 'NIKHIL_NATH_P_CL.pdf';
+    link.href = '/portfolio/cover-letter.pdf';
+    link.download = 'cover-letter.pdf';
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
@@ -52,12 +54,15 @@ export function Hero() {
             </h1>
             <h2 className="text-2xl md:text-3xl font-semibold mb-6 text-gray-300 ">
               <Typewriter
-                words={['Frontend Developer']}
+                words={[
+                    'Frontend Developer',
+                    'MSc NLP Student'
+                  ]}
+                  loop={0}
                 cursor={showCursor}
                 cursorStyle="|"
                 typeSpeed={70}
                 delaySpeed={1000}
-                loop={1}
                 onLoopDone={() => setShowCursor(false)}
               />
             </h2>
@@ -65,9 +70,9 @@ export function Hero() {
               className="text-lg mb-8 text-gray-400 leading-relaxed"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: .5, delay: 0.4 }}
+              transition={{ duration: 0.5, delay: 0.4 }}
             >
-              Experienced <span className="text-white font-semibold">frontend developer</span> with 2+ years of expertise in building responsive web applications and SPAs using Vue.js, React.js, and Next.js. Proficient in CMS integration with VTEX and Flash, performance tuning, and accessibility compliance. Skilled in translating Figma designs into pixel-perfect UI, resolving complex UI bugs, and enhancing user experiences across global e-commerce platforms. Currently working at Motorola Mobility.
+              Experienced <span className="text-white font-semibold">frontend developer</span> with 3+ years of experience building scalable web applications using Vue.js, React.js, and modern JavaScript frameworks. Currently pursuing an <span className="text-white font-semibold">M.Sc. in Natural Language Processing</span> at the University of Trier, Germany. Alongside frontend engineering, I am exploring AI-powered applications, Retrieval-Augmented Generation (RAG), vector databases, semantic search, and Large Language Model integration. Passionate about creating user-focused software solutions and continuously learning emerging technologies.
             </motion.p>
             <div className="flex flex-wrap gap-4 mb-8">
               <motion.button
@@ -86,7 +91,18 @@ export function Hero() {
               >
                 Download CL <FileText className="ml-2 h-4 w-4" />
               </motion.button>
-            </div>
+            <motion.a
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                href="https://rag-document-assistant-twnpiyqkcbmqvqynh2nopb.streamlit.app/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="border-2 border-cyan-500 text-cyan-500 hover:bg-cyan-500 hover:text-black px-6 py-3 font-semibold rounded-lg transition-colors duration-300 flex items-center"
+              >
+                View AI Project
+                <ExternalLink className="ml-2 h-4 w-4" />
+              </motion.a>
+        </div>
 
             <div className="flex space-x-6">
               <motion.a whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} href="https://www.linkedin.com/in/nikhil-nath-222113221/" target="_blank" rel="noopener noreferrer" className="text-2xl text-white hover:text-[var(--accent-cyan)] transition-colors duration-300">

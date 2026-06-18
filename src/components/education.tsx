@@ -2,6 +2,13 @@ import React from "react";
 import { motion } from "framer-motion";
 const education = [
   {
+    institution: "University of Trier, Trier, Germany",
+    degree: "M.Sc. in Natural Language Processing",
+    period: "2026 – Present",
+    description:
+      "Currently pursuing a Master's degree focused on Natural Language Processing, Machine Learning, Large Language Models, Information Retrieval, and AI applications."
+  },
+  {
     institution: "Shree Devi Institute of Technology, Mangalore, Karnataka, India",
     degree: "B.Tech in Computer Science and Engineering",
     period: "2018 – 2022",

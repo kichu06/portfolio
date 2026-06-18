@@ -4,16 +4,17 @@ const experiences = [
   {
     company: "Motorola Mobility (Lenovo)",
     role: "Frontend Developer",
-    period: "Jul 2024 – Present",
+    period: "Jul 2024 – Mar 2026",
     bullets: [
       "Migrated multiple VTEX portals to in-house Flash CMS using Vue.js and SASS.",
       "Developed reusable UI components and integrated React modules.",
       "Improved web accessibility from 70% to 92% using WCAG-compliant practices.",
       "Collaborated with cross-geo design teams (US & India) to implement responsive Figma designs.",
-      "Automated product entry using a Python Scrapy bot, reducing manual work by 40%.",
+      "Developed backend automation workflows using Python and FastAPI to streamline operational processes.",
       "Resolved 100+ cross-browser and UI-specific bugs during QA and UAT cycles.",
       "Integrated widgets using script tags on specific meta targets for headless CMS.",
-      "Integrated REST APIs and optimized frontend load times using performance audits."
+      "Integrated REST APIs and optimized frontend load times using performance audits.",
+      "Leveraged AI-assisted development tools to accelerate implementation, debugging, and code optimization."
     ]
   },
   {
@@ -21,7 +22,7 @@ const experiences = [
     role: "Web Developer",
     period: "Jan 2023 – Jul 2024",
     bullets: [
-      "Built dynamic SPAs using Vue.js, Vuetify, and JavaScript for global product pages.",
+      "Delivered 15+ frontend features for 8 successful global product launches using Vue.js and Vuetify.",
       "Reduced layout bugs and improved mobile session metrics by 25% with responsive design.",
       "Collaborated closely with UX teams and QA to deliver high-quality interfaces.",
       "Worked with Agile/Scrum teams to ship weekly feature updates and fixes.",

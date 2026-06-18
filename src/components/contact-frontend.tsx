@@ -28,7 +28,7 @@ export function Contact() {
 
     try {
       await emailjs.send(
-        "service_q4f1ml6",
+        "service_6i4itcn",
         "template_u5c4zs4",
         {
           name: formData.name,
@@ -66,14 +66,14 @@ export function Contact() {
     {
       icon: Phone,
       title: "Phone",
-      value: "+91 - 7025441460",
+      value: "+49 - 15511048173",
       color: "bg-[var(--accent-blue)]",
       textColor: "text-white"
     },
     {
       icon: MapPin,
       title: "Location",
-      value: "Bangalore, Karnataka, India",
+      value: "Trier, Germany",
       color: "bg-[var(--success-green)]",
       textColor: "text-[var(--dark-primary)]"
     }

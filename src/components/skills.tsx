@@ -1,9 +1,10 @@
 import {
   SiReact, SiVuedotjs, SiNextdotjs, SiJavascript, SiTypescript,
   SiHtml5, SiCss3, SiTailwindcss, SiGit, SiVite, SiOpenai,
-  SiGithub, SiSass, SiMysql, SiFigma, SiJira
+  SiGithub, SiSass, SiMysql, SiFigma, SiJira,
+  SiPython
 } from "react-icons/si";
-import { FaRobot, FaComments } from "react-icons/fa";
+import { FaRobot } from "react-icons/fa";
 import { motion } from 'framer-motion';
 
 
@@ -13,6 +14,7 @@ const devSkills = [
   { name: "Next.js", icon: SiNextdotjs, color: "#ffffff" },
   { name: "JavaScript", icon: SiJavascript, color: "#F7DF1E" },
   { name: "TypeScript", icon: SiTypescript, color: "#3178C6" },
+  { name: "Python", icon: SiPython, color: "#3776AB" },
   { name: "HTML5", icon: SiHtml5, color: "#E34F26" },
   { name: "CSS3", icon: SiCss3, color: "#1572B6" },
   { name: "SASS/SCSS", icon: SiSass, color: "#CC6699" },
@@ -22,23 +24,30 @@ const devSkills = [
 ];
 
 const aiSkills = [
-  { name: "ChatGPT", icon: SiOpenai, color: "#10A37F" },
-  { name: "Claude AI", icon: FaComments, color: "#ffffff" },  // Placeholder color
-  { name: "Cursor AI", icon: FaRobot, color: "#3B82F6" },     // Placeholder color
-  { name: "GitHub Copilot", icon: SiGithub, color: "#ffffff" },
+  { name: "RAG", icon: null },
+  { name: "ChromaDB", icon: null },
+  { name: "Embeddings", icon: null },
+  { name: "Semantic Search", icon: null },
+  { name: "Sentence Transformers", icon: null },
+  { name: "Hugging Face", icon: null },
 ];
 
 const otherSkills = [
   { name: "SQL", icon: SiMysql, color: "#4479A1" },
   { name: "JIRA", icon: SiJira, color: "#0052CC" },
   { name: "Figma", icon: SiFigma, color: "#F24E1E" },
+
+  { name: "FastAPI", icon: null },
+  { name: "REST APIs", icon: null },
+
   { name: "VTEX CMS", icon: null },
   { name: "Flash CMS", icon: null },
-  { name: "Web Security", icon: null },
-  { name: "Mocha", icon: null },
-  { name: "GitLab CI/CD", icon: null },
+
+  { name: "Storybook", icon: null },
+
   { name: "Performance Optimization", icon: null },
   { name: "Accessibility", icon: null },
+
 ];
 
 // Helper to generate initials from name
@@ -76,22 +85,35 @@ export function SkillsSection() {
 
       {/* AI Tools */}
       <div className="mb-12">
-        <h3 className="text-xl font-semibold text-white mb-6">AI & LLM Tools</h3>
+        <h3 className="text-xl font-semibold text-white mb-6">AI & NLP</h3>
         <div className="flex flex-wrap justify-center gap-8">
-          {aiSkills.map((skill, index) => (
-            <motion.div
-              whileInView={{ opacity: 1, scale: 1 }}
-              whileHover={{ scale: 1.2 }}
-              initial={{ opacity: 0, y: 0 }}
-              transition={{ duration: 0.4, delay: index * 0.1 }}
-              viewport={{ once: true, amount: 0.3 }}
-              key={index}
-              className="flex flex-col items-center text-white hover:text-[var(--accent-cyan)] transition"
-            >
-              <skill.icon size={40} className="mb-2" style={{ color: skill.color }} />
-              <span className="text-sm font-medium">{skill.name}</span>
-            </motion.div>
-          ))}
+         {aiSkills.map((skill, index) => (
+          <motion.div
+            whileInView={{ opacity: 1, scale: 1 }}
+            whileHover={{ scale: 1.2 }}
+            initial={{ opacity: 0, y: 0 }}
+            transition={{ duration: 0.4, delay: index * 0.1 }}
+            viewport={{ once: true, amount: 0.3 }}
+            key={index}
+            className="flex flex-col items-center text-white hover:text-[var(--accent-cyan)] transition"
+          >
+            {skill.icon ? (
+              <skill.icon
+                size={40}
+                className="mb-2"
+                style={{ color: skill.color }}
+              />
+            ) : (
+              <div className="w-10 h-10 mb-2 rounded-full bg-gray-700 flex items-center justify-center text-sm font-semibold">
+                {getInitials(skill.name)}
+              </div>
+            )}
+
+            <span className="text-sm font-medium">
+              {skill.name}
+            </span>
+          </motion.div>
+        ))}
         </div>
       </div>
 
